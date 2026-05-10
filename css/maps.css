@@ -1,0 +1,364 @@
+/* ============================================
+   MAPS PAGE — Marafet Research
+   ============================================ */
+
+.maps-hero {
+  position: relative;
+  padding: 140px 0 80px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.maps-hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.maps-hero__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.maps-hero__title {
+  font-family: 'Unbounded', 'Manrope', sans-serif;
+  font-size: clamp(32px, 5.5vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--accent-100);
+  margin: 24px 0 24px;
+}
+
+.maps-hero__lead {
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.55;
+  color: var(--gray-70);
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+.maps-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+.maps-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(122, 84, 255, 0.15);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-80);
+}
+
+.maps-legend__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 1px var(--accent-60);
+}
+
+.maps-legend__circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(122, 84, 255, 0.18);
+  border: 1px solid rgba(122, 84, 255, 0.4);
+}
+
+.maps-legend__heat {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(122, 84, 255, 0.55);
+  border: 1px solid var(--accent-60);
+}
+
+/* ============================================
+   КАРТЫ ПО ГОРОДАМ
+   ============================================ */
+.maps-main {
+  padding: 40px 0 120px;
+  background: var(--gray-10);
+}
+
+.map-section {
+  max-width: var(--container);
+  margin: 0 auto 56px;
+}
+
+.map-section__head {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.map-section__title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.map-section__title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--accent-100);
+  line-height: 1.1;
+}
+
+.map-section__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.map-section__count {
+  display: inline-block;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  background: var(--gradient);
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+
+.map-section__pop {
+  font-size: 13px;
+  color: var(--gray-60);
+  font-weight: 500;
+}
+
+.map-section__sub {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--gray-70);
+  max-width: 720px;
+}
+
+.map-wrap {
+  background: var(--white);
+  border: 1px solid var(--gray-20);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  box-shadow: 0 12px 40px rgba(122, 84, 255, 0.06);
+}
+
+.map {
+  height: 540px;
+  width: 100%;
+  border-radius: var(--radius-md);
+  background: var(--gray-10);
+  z-index: 1;
+}
+
+@media (max-width: 720px) {
+  .map {
+    height: 400px;
+  }
+}
+
+/* Leaflet кастомизация */
+.leaflet-container {
+  font-family: 'Manrope', sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius-md);
+  padding: 4px;
+  box-shadow: 0 12px 40px rgba(122, 84, 255, 0.18);
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent-100);
+  font-family: 'Manrope', sans-serif;
+}
+
+.leaflet-popup-content strong {
+  display: block;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-100);
+  margin-bottom: 4px;
+}
+
+.leaflet-popup-content .popup-network {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: var(--accent-10);
+  color: var(--accent-70);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.leaflet-popup-tip {
+  background: var(--white);
+}
+
+.leaflet-control-attribution {
+  font-size: 10px !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+  padding: 2px 6px !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--white) !important;
+  color: var(--accent-100) !important;
+  border-color: var(--gray-20) !important;
+  font-weight: 700;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--accent-10) !important;
+  color: var(--accent-60) !important;
+}
+
+/* Кастомный маркер */
+.cw-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-60);
+  border: 2px solid var(--white);
+  box-shadow: 0 2px 8px rgba(122, 84, 255, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease);
+}
+
+.cw-marker:hover {
+  transform: scale(1.4);
+}
+
+.cw-marker--solosalon { background: #7a54ff; }
+.cw-marker--indi { background: #583db5; }
+.cw-marker--glow { background: #18b38a; }
+.cw-marker--cuteam { background: #ab5ce9; }
+.cw-marker--iqbeauty { background: #ffb800; }
+.cw-marker--vibe { background: #ff7c8c; }
+.cw-marker--brush { background: #b6a1ff; }
+.cw-marker--nordic { background: #5a5a5b; }
+.cw-marker--artel { background: #ff9f40; }
+.cw-marker--artcraft { background: #7a54ff; }
+.cw-marker--svoboda { background: #18b38a; }
+.cw-marker--default { background: #858585; }
+
+/* Takeaway */
+.map-takeaway {
+  max-width: var(--container);
+  margin: 80px auto 0;
+}
+
+.map-takeaway__inner {
+  background: var(--accent-100);
+  color: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-takeaway__inner::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  background: var(--magenta);
+  filter: blur(120px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.map-takeaway__inner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.map-takeaway h3 {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+
+.map-takeaway__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 720px) {
+  .map-takeaway__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .map-takeaway__inner {
+    padding: 32px;
+  }
+}
+
+.map-takeaway__num {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.map-takeaway__label {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--accent-30);
+}
+
+.map-takeaway__note {
+  font-size: 13px;
+  color: var(--accent-50);
+  font-style: italic;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  line-height: 1.55;
+}
+
+/* Активная ссылка навигации */
+.nav__menu a.is-active {
+  color: var(--accent-60);
+  background: var(--accent-10);
+}
