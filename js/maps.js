@@ -45,6 +45,9 @@
       zoomControl: true
     });
 
+    // Убираем «Leaflet» и флаг из атрибуции — оставляем только © OSM
+    map.attributionControl.setPrefix(false);
+
     // Активируем колесо мыши после клика по карте (чтобы не «угонять» скролл)
     map.on('click', () => map.scrollWheelZoom.enable());
     map.on('mouseout', () => map.scrollWheelZoom.disable());
